@@ -38,7 +38,7 @@ export class CourseService {
     }
 }
 
-var COURSES: Course[] = [
+var COURSES: Course[]; /*= [
     {
         id: 1,
         name: 'Angular: CLI',
@@ -94,4 +94,4 @@ var COURSES: Course[] = [
         price: 56.99,
         imageUrl: '/assets/images/animations.png',
     }
-];
+]; */
