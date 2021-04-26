@@ -31,9 +31,14 @@ export class CourseService {
             return this.httpClient.post<Course>(this.courseUrl, course)
         }
     }
+
+    deleteByID(id: number): Observable<any> {
+        //return this.httpClient.delete<any>('${this.courseUrl}/${id}');
+        return this.httpClient.delete<any>(this.courseUrl + "/" + id)
+    }
 }
 
-var COURSES: Course[] = [
+var COURSES: Course[]; /*= [
     {
         id: 1,
         name: 'Angular: CLI',
@@ -89,4 +94,4 @@ var COURSES: Course[] = [
         price: 56.99,
         imageUrl: '/assets/images/animations.png',
     }
-];
+]; */
