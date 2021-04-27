@@ -1,20 +1,19 @@
+import { AppPipeModule } from '../shared/pipe/app-pipe.module';
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { ReplacePipe } from '../pipe/replace.pipe';
-import { StarComponent } from '../star/star.component';
 import { CourseListComponent } from './course-list.component';
 import { CourseInfoComponent } from './courses-info.component';
+import { FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { StarModule } from '../shared/component/star/star.module';
 
 @NgModule({
     declarations: [
         CourseListComponent,
-        CourseInfoComponent,
-        ReplacePipe,
-        StarComponent
+        CourseInfoComponent
     ], 
     imports: [
+        AppPipeModule,
         CommonModule,
         FormsModule,
         RouterModule.forChild([
@@ -24,7 +23,8 @@ import { CourseInfoComponent } from './courses-info.component';
             {
                 path: 'courses/info/:id', component: CourseInfoComponent
             }
-        ])
+        ]),
+        StarModule
     ]
 })
 export class CourseModule {
